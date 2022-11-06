@@ -1,0 +1,19 @@
+{
+  "name": "videogameinformation-api",
+  "version": "1.0.0",
+  "description": "The backend api of the video Game Information API",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LazyAfternoonStudios/VideoGameInformation-API.git"
+  },
+  "author": "Daniel Stark",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LazyAfternoonStudios/VideoGameInformation-API/issues"
+  },
+  "homepage": "https://github.com/LazyAfternoonStudios/VideoGameInformation-API#readme"
+}
