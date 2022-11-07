@@ -1,6 +1,5 @@
+import db from './config/connection.js';
 import express from 'express';
-import dotenv from 'dotenv';
-dotenv.config();
 
 import routes from './routes/index.js';
 
@@ -12,6 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}: http://localhost:${PORT}`);
-});
+db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+    });
+  });
+  
