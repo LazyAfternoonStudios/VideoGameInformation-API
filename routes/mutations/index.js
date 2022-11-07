@@ -28,9 +28,11 @@ router.post("/addGame", async (req, res) => {
 // add a new platform
 router.post("/addPlatform", async (req, res) => {
   try {
+    const platformsLength = await Platform.countDocuments()
     const newPlatform = await Platform.create({
       name: req.body.name,
       type: req.body.type,
+      platformId: platformsLength + 1,
       company: req.body.company,
       releaseDates: req.body.releaseDates,
       launchPrices: req.body.launchPrices,

@@ -16,6 +16,10 @@ const platformSchema = new Schema(
         enum: ['Console', 'Handheld', 'Mobile Phone', 'Computer', 'Arcade', 'Software', 'Console & Handheld', 'Other'],
         required: true
       },
+      platformId: {
+        type: Number,
+        required: true
+      },
       company: {
         type: String,
         required: true
