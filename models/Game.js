@@ -1,9 +1,9 @@
 import {Schema, model} from 'mongoose';
 
-// TODO: Create seperate models for each of the mini schemas below:
-const ageRatingSchema = new Schema({ title: {type: String, required: true}, rating: {type: String, required: true} });
 const releaseDateSchema = new Schema({ title: {type: String, required: true}, date: {type: String, required: true} });
 const creditSchema = new Schema({ title: {type: String, required: true}, entries: {type: [String], required: true} });
+// TODO: Create seperate models for each of the mini schemas below:
+const ageRatingSchema = new Schema({ title: {type: String, required: true}, rating: {type: String, required: true} });
 
 const gameSchema = new Schema(
     {
