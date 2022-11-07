@@ -1,2 +1,3 @@
 import Game from './Game.js';
-export {Game};
+import Platform from './Platform.js';
+export {Game, Platform};
