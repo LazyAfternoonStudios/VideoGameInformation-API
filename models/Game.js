@@ -12,6 +12,10 @@ const gameSchema = new Schema(
         required: true
       },
       platforms: [String],
+      gameId: {
+        type: Number,
+        required: true
+      },
       ageRatings: [ageRatingSchema],
       releaseDates: [releaseDateSchema],
       developers: [String],
