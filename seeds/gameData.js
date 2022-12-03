@@ -2,6 +2,7 @@ const data = [
   {
     title: "Video Game Title",
     platforms: ["PC", "PS4"],
+    gameId: 1,
     ageRatings: [
       {
         title: "ESRB",
