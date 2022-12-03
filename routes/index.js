@@ -1,10 +1,11 @@
 import express from 'express';
 const router = express.Router()
 
-import queryRoutes from './queries/index.js';
-import mutationRoutes from './mutations/index.js';
+import platformRoutes from './platforms/index.js'
 
-router.use('/query', queryRoutes);
-router.use('/mutate', mutationRoutes);
+// TODO: Make routes semantic like /games, /platforms, /companies, etc.
+// Currently routes are divided into queries and mutations
+
+router.use('/platforms', platformRoutes);
 
 export default router;
