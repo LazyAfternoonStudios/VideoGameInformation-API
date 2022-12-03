@@ -2,7 +2,7 @@ const data = [
   {
     name: "PlayStation 4",
     type: "Console",
-    platformId: 48,
+    platformId: 1,
     company: "Sony",
     releaseDates: [
       {
