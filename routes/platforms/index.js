@@ -2,6 +2,17 @@ import express from "express";
 const router = express.Router();
 import { Platform } from "../../models/index.js";
 
+router.head("/", async (req, res) => {
+  try {
+    const count = await Platform.count();
+    res.set("X-Total-Count", count);
+    res.status(200).send();
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get("/", async (req, res) => {
   try {
     const platforms = await Platform.find({});
