@@ -2,11 +2,13 @@
   "name": "videogameinformation-api",
   "version": "1.0.0",
   "description": "The backend api of the video Game Information API",
-  "main": "server.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
     "test": "test",
-    "start": "node server.js",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/server.js",
     "develop": "nodemon server.js",
     "seed": "node ./seeds/"
   },
@@ -26,6 +28,8 @@
     "mongoose": "^6.7.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^16.18.12",
     "nodemon": "^2.0.20"
   }
 }

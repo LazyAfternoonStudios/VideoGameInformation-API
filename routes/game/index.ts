@@ -1,11 +1,14 @@
-import express from "express";
-const router = express.Router();
+import express, { Router, Request, Response } from "express";
 import { Game } from "../../models/index.js";
 
-router.head("/", async (req, res) => {
+// TODO: Design a fast search algo for the search bar
+
+const router: Router = express.Router();
+
+router.head("/", async (req: Request, res: Response) => {
   try {
     const count = await Game.count();
-    res.set("X-Total-Count", count);
+    res.set("X-Total-Count", count.toString());
     res.status(200).send();
   } catch (err) {
     console.log(err);
@@ -13,7 +16,7 @@ router.head("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   try {
     const games = await Game.find({});
     // if games is empty, return 204
@@ -28,7 +31,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:gameId", async (req, res) => {
+router.get("/:gameId", async (req: Request, res: Response) => {
   const { gameId } = req.params;
   try {
     const games = await Game.find({ gameId: gameId });
@@ -44,4 +47,4 @@ router.get("/:gameId", async (req, res) => {
   }
 });
 
-  export default router;
+export default router;
