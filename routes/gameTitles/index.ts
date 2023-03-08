@@ -1,9 +1,9 @@
 import express, { Router, Request, Response } from "express";
-import { GameTitle } from "../../models/index.js";
+import { GameTitle } from "../../models/index";
 
 const router: Router = express.Router();
 
-router.get("/search", async (req, res) => {
+router.get("/search", async (req: Request, res: Response) => {
   const query: string = req.query.q as string;
   if (!query) {
     return res.status(400).json({ message: "Search query is missing" });
