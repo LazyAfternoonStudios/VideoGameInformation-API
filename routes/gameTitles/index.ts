@@ -1,5 +1,5 @@
 import express, { Router, Request, Response } from "express";
-import { GameTitle } from "../../models/index";
+import { GameTitle } from "../../models/index.js";
 
 const router: Router = express.Router();
 
