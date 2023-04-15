@@ -31,12 +31,12 @@ router.get("/", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/:gameId", async (req: Request, res: Response) => {
-  const { gameId } = req.params;
+router.get("/:title", async (req: Request, res: Response) => {
+  const { title } = req.params;
   try {
-    const games = await Game.find({ gameId: gameId });
+    const games = await Game.findOne({ title: title });
     // if games is empty, return 204
-    if (games.length === 0) {
+    if (games === null) {
       return res.status(204).json();
     }
     // if there are games, return 200
