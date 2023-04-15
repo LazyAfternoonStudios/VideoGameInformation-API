@@ -1,11 +1,11 @@
-import express from "express";
-const router = express.Router();
+import express, { Request, Response, Router } from "express";
+const router: Router = express.Router();
 import { Platform } from "../../models/index.js";
 
-router.head("/", async (req, res) => {
+router.head("/", async (req: Request, res: Response) => {
   try {
     const count = await Platform.count();
-    res.set("X-Total-Count", count);
+    res.set("X-Total-Count", count.toString());
     res.status(200).send();
   } catch (err) {
     console.log(err);
@@ -13,7 +13,7 @@ router.head("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   try {
     const platforms = await Platform.find({});
     // if platforms is empty, return 204
@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:platformId", async (req, res) => {
+router.get("/:platformId", async (req: Request, res: Response) => {
   const { platformId } = req.params;
   try {
     const platforms = await Platform.find({ platformId: platformId });

@@ -19,7 +19,7 @@ const data = [
     unitsSold: 0,
     specs: [
       {
-        category: "CPU",
+        category: "Hardware",
         data: [
           {
             title: "CPU",
