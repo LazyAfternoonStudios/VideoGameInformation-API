@@ -6,14 +6,12 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  const limit: number = parseInt(req.query.limit as string) || 10;
-  const offset: number = (parseInt(req.query.page as string) - 1) * limit || 0;
 
   try {
-    const results = await GameTitle.find({ lazyAfternoonContent: true })
-      .sort({ contentAddedDate: -1 })
-      .limit(limit)
-      .skip(offset);
+    const results = await GameTitle.find({
+      gameGenerated: true,
+    }, "title");
+
     if (results.length === 0) {
       return context.res.status(204).send();
     }
